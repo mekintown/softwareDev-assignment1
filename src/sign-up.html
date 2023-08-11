@@ -36,17 +36,16 @@
             type="text"
             placeholder="Company name*"
             class="company-name-input"
+            required
           />
-          <select>
-            <option selected="true" disabled="disabled">
-              Choose Booth size*
-            </option>
-            <option value="10*10">10*10</option>
-            <option value="10*15">10*15</option>
+          <select required>
+            <option disabled selected>Choose Booth size*</option>
+            <option value="10*10">10*10 ft</option>
+            <option value="10*15">10*15 ft</option>
           </select>
-          <input type="number" placeholder="Slots*" />
-          <input type="text" placeholder="Contact Name*" />
-          <input type="tel" placeholder="Contact Number*" />
+          <input type="number" placeholder="Slots" min="1" max="10" />
+          <input type="text" placeholder="Contact Name*" required />
+          <input type="tel" placeholder="Contact Number*" required />
           <div class="sign-up-footer">
             <button type="submit" class="create-account-btn">Submit</button>
             <div class="table-check-box">
