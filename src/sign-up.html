@@ -8,6 +8,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./register.js" defer></script>
     <title>Expo</title>
   </head>
   <body>
@@ -30,22 +31,36 @@
         </p>
       </div>
       <div class="sign-up-right">
-        <form class="sign-up-form">
+        <form
+          class="sign-up-form"
+          onsubmit="return handleFormOnSubmit(event)"
+          novalidate
+        >
           <h2 class="right-header">Sign up now!</h2>
-          <input
-            type="text"
-            placeholder="Company name*"
-            class="company-name-input"
-            required
-          />
-          <select required>
-            <option disabled selected>Choose Booth size*</option>
-            <option value="10*10">10*10 ft</option>
-            <option value="10*15">10*15 ft</option>
-          </select>
-          <input type="number" placeholder="Slots" min="1" max="10" />
-          <input type="text" placeholder="Contact Name*" required />
-          <input type="tel" placeholder="Contact Number*" required />
+          <div class="input-wrapper company-name-input">
+            <input type="text" placeholder="Company name*" required />
+            <div class="error" aria-live="polite"></div>
+          </div>
+          <div class="input-wrapper">
+            <select id="boothSize">
+              <option disabled selected value="">Choose Booth size*</option>
+              <option value="10*10">10*10 ft</option>
+              <option value="10*15">10*15 ft</option>
+            </select>
+            <div class="error" aria-live="polite"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="number" placeholder="Slots" min="1" max="10" />
+            <div class="error" aria-live="polite"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" placeholder="Contact Name*" required />
+            <div class="error" aria-live="polite"></div>
+          </div>
+          <div class="input-wrapper">
+            <input type="tel" placeholder="Contact Number*" required />
+            <div class="error" aria-live="polite"></div>
+          </div>
           <div class="sign-up-footer">
             <button type="submit" class="create-account-btn">Submit</button>
             <div class="table-check-box">
